@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formularz</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/konkurs.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="header">
+        <h1>
+          Zgłoszenie<br />
+          do Konkursu Plastycznego
+        </h1>
+        <div class="symbol-container">
+          <input type="checkbox" id="theme-toggle" class="theme-toggle-input" />
+          <label for="theme-toggle" class="symbol">🌗</label>
+          <span class="tip-text">Zmień motyw</span>
+        </div>
+      </div>
+      <form action="https://httpbin.org/get" method="get">
+        <label>Imię:</label>
+        <input type="text" maxlength="30" required />
+        <label>Nazwisko:</label>
+        <input type="text" maxlength="50" required />
+        <label>Email:</label>
+        <input type="email" required />
+        <label>Miasto:</label>
+        <input
+          type="text"
+          id="city-input"
+          list="city-list"
+          placeholder="Wpisz lub wybierz"
+          required
+        />
+        <datalist id="city-list">
+          <option value="Warszawa"></option>
+          <option value="Kraków"></option>
+          <option value="Gdańsk"></option>
+          <option value="Poznań"></option>
+          <option value="Wrocław"></option>
+        </datalist>
+
+        <label>Data urodzenia:</label>
+        <input type="date" required />
+        <label>Liczba zgłaszanych prac (od 1 do 6):</label>
+        <input type="number" min="1" max="6" step="1" required />
+        <label>Kolor wiodący prac:</label>
+        <input type="color" value="#FFFF00" required />
+        <label>Kategoria pracy:</label>
+        <select id="select" name="kategoria_pracy">
+          <option value="default" disabled selected>
+            -- wybierz kategorię --
+          </option>
+          <option value="rysunek">Rysunek</option>
+          <option value="malarswto">Malarswto</option>
+          <option value="grafika-cyfrowa">Grafika cyfrowa</option>
+        </select>
+        <fieldset>
+          <legend>&nbsp&nbspPublikacja pracy online:&nbsp&nbsp</legend>
+          <div class="radio-option">
+            <input type="radio" id="tak" name="publikacja" required />
+            <label for="tak">Tak</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="nie" name="publikacja" required />
+            <label for="nie">Nie</label>
+          </div>
+        </fieldset>
+        <div class="checkbox-container">
+          <input type="checkbox" id="zgoda" required />
+          <label for="zgoda">Zgadzam się na regulamin Konkursu</label>
+        </div>
+        <button>Wyślij zgłoszenie</button>
+      </form>
+    </div>
+  </body>
+</html>

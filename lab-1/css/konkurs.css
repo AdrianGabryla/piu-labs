@@ -1,0 +1,201 @@
+:root {
+  color-scheme: light;
+  --body-bg-color: white;
+  --form-bg-color: white;
+  --text-color: #000000;
+  --label-color: #000;
+  --border-color: rgba(0, 0, 0, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --button-bg-color: #2ca82c;
+  --button-hover-bg-color: #45a049;
+  --button-text-color: white;
+  --fieldset-border-color: #ccc;
+  --tip-bg-color: white;
+  --tip-text-color: #333;
+  --tip-border-color: #000;
+  --input-bg-color: white;
+}
+
+body:has(.theme-toggle-input:checked) {
+  color-scheme: dark;
+  --form-bg-color: #292828;
+  --text-color: #ffffff;
+  --label-color: #ffffff;
+  --border-color: #555;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --button-bg-color: #2ca82c;
+  --button-hover-bg-color: #45a049;
+  --input-bg-color: #363636;
+}
+
+.theme-toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0px 50px 0px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form-container {
+  width: 500px;
+  box-sizing: border-box;
+}
+
+form {
+  background-color: var(--form-bg-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: background-color 0.3s;
+}
+
+form label {
+  display: block;
+  color: var(--label-color);
+}
+
+form input,
+form select {
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  height: 40px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+input[type='text'],
+input[type='date'],
+input[type='email'],
+input[type='number'],
+select {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+
+button {
+  height: 50px;
+  width: 100%;
+  border-radius: 6px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+option {
+  font-size: 16px;
+}
+
+input[type='date'] {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+}
+
+fieldset {
+  border: 2px solid var(--fieldset-border-color);
+  padding: 15px 20px;
+  transition: border-color 0.3s;
+}
+
+legend {
+  color: var(--text-color);
+}
+
+.radio-option,
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.radio-option {
+  margin-bottom: 12px;
+}
+
+.radio-option:last-of-type {
+  margin-bottom: 0;
+}
+
+.checkbox-container {
+  margin-top: 25px;
+}
+
+.radio-option input[type='radio'],
+.checkbox-container input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.radio-option label,
+.checkbox-container label {
+  display: inline;
+  font-weight: normal;
+  margin: 0;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+input[type='color'] {
+  cursor: pointer;
+}
+
+.symbol {
+  cursor: pointer;
+  display: block;
+  font-size: 2.4em;
+}
+
+.symbol-container {
+  position: relative;
+  display: inline-block;
+}
+
+.symbol-container .tip-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--tip-bg-color);
+  color: var(--tip-text-color);
+  border: 1px solid var(--tip-border-color);
+  text-align: center;
+  padding: 3px 5px;
+  font-size: 13px;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 1;
+  left: 60%;
+  transition: opacity 0.2s, background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.symbol-container:hover .tip-text {
+  visibility: visible;
+  opacity: 1;
+}
