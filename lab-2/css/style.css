@@ -8,12 +8,42 @@ body {
   margin: 1rem;
   padding: 0;
 }
-
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid #333;
+  position: relative;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+header h1 {
+  margin: 0;
+}
+header h1.name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+nav {
+  border-top: 2px;
+  margin-top: 1rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 1rem;
+}
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
 }
