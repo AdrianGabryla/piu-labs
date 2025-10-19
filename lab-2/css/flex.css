@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+fieldset,
+.container {
+  border: 2px solid rgb(189, 132, 78);
+  border-radius: 0.5rem;
+  background-color: rgb(255, 253, 227);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.item {
+  display: block;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+body:has(input[value='blue']:checked) {
+  .item {
+    background-color: blue;
+    border-color: blue;
+    display: block;
+  }
+  @media (min-width: 1024px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .item {
+      width: 30%;
+    }
+  }
+  @media (max-width: 1023px) {
+    .container {
+      padding-left: 10rem;
+      padding-right: 10rem;
+      justify-content: center;
+    }
+  }
+}
+body:has(input[value='red']:checked) {
+  .item {
+    background-color: red;
+    border-color: red;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container > .item:nth-child(1)::after {
+    content: '(Jestem większy i na środku!)';
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+  .container > .item:nth-child(1) {
+    order: 3;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+  }
+  .container > .item:nth-child(2) {
+    order: 1;
+  }
+  .container > .item:nth-child(3) {
+    order: 2;
+  }
+  .container > .item:nth-child(4) {
+    order: 4;
+  }
+  .container > .item:nth-child(5) {
+    order: 5;
+  }
+  .container {
+    gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .container {
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+    }
+    .container > .item:nth-child(1) {
+      width: 20%;
+    }
+    .item {
+      height: 3rem;
+    }
+  }
+  @media (max-width: 1023px) {
+    .container {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .container > .item:nth-child(1) {
+      width: 100%;
+    }
+  }
+}
+body:has(input[value='green']:checked) {
+  .item {
+    background-color: green;
+    border-color: green;
+    position: relative;
+    flex-grow: 1;
+  }
+  .container {
+    display: flex;
+    gap: 2rem;
+  }
+  .container > .item:nth-child(1) {
+    width: 25%;
+  }
+  .container > .item:nth-child(2) {
+    width: 20%;
+  }
+  .container > .item:nth-child(3) {
+    width: 15%;
+  }
+  .container > .item:nth-child(4) {
+    width: 10%;
+  }
+  .container > .item:nth-child(5) {
+    width: 5%;
+  }
+
+  .container > .item:nth-child(1)::before,
+  .container > .item:nth-child(1)::after {
+    content: '😀';
+    font-size: 2rem;
+    position: absolute;
+  }
+  .container > .item:nth-child(1)::before {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .container > .item:nth-child(1)::after {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+  @media (min-width: 1024px) {
+    .container {
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+    }
+  }
+  @media (max-width: 1023px) {
+    .container {
+      flex-wrap: wrap-reverse;
+      justify-content: flex-end;
+      flex-direction: column;
+      order: reverse;
+    }
+    .container > .item:nth-child(1) {
+      order: 5;
+      width: 90%;
+    }
+    .container > .item:nth-child(2) {
+      order: 4;
+      width: 75%;
+    }
+    .container > .item:nth-child(3) {
+      order: 3;
+      width: 60%;
+    }
+    .container > .item:nth-child(4) {
+      order: 2;
+      width: 35%;
+    }
+    .container > .item:nth-child(5) {
+      order: 1;
+      width: 20%;
+    }
+  }
+}
