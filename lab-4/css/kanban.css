@@ -1,0 +1,70 @@
+#kanban-root {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem auto;
+  max-width: 1000px;
+  justify-content: center;
+}
+.column {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  width: 320px;
+  box-shadow: 0 3px 8px #0001;
+}
+.col-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.col-title {
+  font-weight: 600;
+}
+.col-actions {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card {
+  border-radius: 6px;
+  padding: 10px;
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+}
+.card-title {
+  outline: none;
+}
+.card-controls {
+  display: flex;
+  gap: 4px;
+}
+button {
+  background: #eef2ff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+}
+.count-badge {
+  background: #eef2ff;
+  padding: 2px 6px;
+  border-radius: 99px;
+}
+@media (max-width: 800px) {
+  #kanban-root {
+    flex-direction: column;
+  }
+  .column {
+    width: auto;
+  }
+}
