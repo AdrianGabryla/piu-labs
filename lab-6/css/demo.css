@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
+  background: #f6fbff;
+  color: #0f172a;
+  margin: 0;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+}
+main.demo {
+  width: 900px;
+  max-width: 95%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+}
+h1 {
+  margin: 0 0 16px;
+  text-align: center;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 0;
+  background: #111827;
+  color: #fff;
+  cursor: pointer;
+  min-width: 160px;
+}
+button:active {
+  transform: translateY(1px);
+}
+.message {
+  min-height: 32px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  color: #fff;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.message.error {
+  background: #f97316;
+  color: #fff;
+}
+.loader {
+  min-height: 24px;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #334155;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+.list li {
+  border-radius: 8px;
+  padding: 10px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(2, 6, 23, 0.03);
+}
+.list li h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+.list li p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+}

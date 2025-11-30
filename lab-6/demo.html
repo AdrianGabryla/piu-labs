@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ajax Demo</title>
+  <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+  <main class="demo">
+    <h1>Ajax Demo</h1>
+    <div class="controls">
+      <button id="btnFetch">Pobierz dane</button>
+      <button id="btnError">Pobierz (błąd)</button>
+      <button id="btnReset">Reset</button>
+    </div>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+    <div id="loader" class="loader" hidden>Ładowanie…</div>
+    <ul id="list" class="list"></ul>
+  </main>
+  <script type="module" src="js/demo.js"></script>
+</body>
+</html>
